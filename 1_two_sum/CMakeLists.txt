@@ -1,3 +1,4 @@
+project(two_sum VERSION 1.0.0)
 
 add_library(
     two_sum 
