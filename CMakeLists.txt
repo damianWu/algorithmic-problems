@@ -39,7 +39,6 @@ add_executable(
     main.cpp
 )
 
-message("Project source dir: ${CMAKE_SOURCE_DIR}")
 
 # Search header file in <dir>
 # include_directories(${CMAKE_SOURCE_DIR}/<dir>)
