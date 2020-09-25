@@ -1,3 +1,7 @@
+# Clang
+.clang-format
+
+
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
