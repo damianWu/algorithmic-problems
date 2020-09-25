@@ -31,9 +31,9 @@ add_subdirectory(1_two_sum)
 
 
 # Testing
-# enable_testing() # Must be defined in top-most CMakeLists.txt file.
+enable_testing() # Must be defined in top-most CMakeLists.txt file.
 # Outsource test to another folder.
-# add_subdirectory(tests)
+add_subdirectory(tests)
 
 
 add_executable(
