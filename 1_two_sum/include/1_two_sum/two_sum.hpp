@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 
-// Exception class
+// Exception classes
 class EmptyVectorException {
 public:
   explicit EmptyVectorException(const std::string &what_message)
@@ -27,9 +27,20 @@ private:
   std::string what_message_;
 };
 
+class SumTargetNotFoundException {
+public:
+  explicit SumTargetNotFoundException(const std::string &what_message)
+      : what_message_{what_message} {}
+
+  const char *what() { return what_message_.c_str(); }
+
+private:
+  const std::string what_message_;
+};
+
 // Naive implementation;
 // Time complexity: O(n^2)
-const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                      int target);
+const std::pair<int, int>
+two_sum_on2(const std::vector<int> &numbers, int target);
 
 #endif // TWO_SUM
