@@ -44,3 +44,16 @@ TEST(TestTwoSum, ShouldThrowExceptionWhenVectorEmpty) {
         err.what());
   }
 }
+
+TEST(TestTwoSum, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
+  // given
+  std::vector<int> v{-1, -24, -673, 9, 346, -7543, -2, 113};
+  int target{7};
+
+  // when
+  auto [i, j]{two_sum_on2(v, target)};
+
+  // then
+  ASSERT_EQ(i, 3);
+  ASSERT_EQ(j, 6);
+}
