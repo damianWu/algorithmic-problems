@@ -32,7 +32,7 @@ public:
   explicit SumTargetNotFoundException(const std::string &what_message)
       : what_message_{what_message} {}
 
-  const char *what() { return what_message_.c_str(); }
+  const char *what() const { return what_message_.c_str(); }
 
 private:
   const std::string what_message_;
