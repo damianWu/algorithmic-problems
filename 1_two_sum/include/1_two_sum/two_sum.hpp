@@ -12,12 +12,24 @@
 // Output: [0,1]
 // Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-#include <utility>
+#include <string>
 #include <vector>
+
+// Exception class
+class EmptyVectorException {
+public:
+  explicit EmptyVectorException(const std::string &what_message)
+      : what_message_{what_message} {}
+
+  const char *what() const { return what_message_.c_str(); }
+
+private:
+  std::string what_message_;
+};
 
 // Naive implementation;
 // Time complexity: O(n^2)
 const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                       int target);
+                                      int target);
 
-#endif  // TWO_SUM
+#endif // TWO_SUM
