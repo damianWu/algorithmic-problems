@@ -2,7 +2,7 @@
 
 #include "1_two_sum/two_sum.hpp"
 
-TEST(TestTwoSum, ShouldReturnNegativeIndexValue) {
+TEST(TestTwoSumOn2, ShouldReturnNegativeIndexValueWhenTargetNotReached) {
   // given
   std::vector<int> v{2, 7, 11, 15};
   int target{7};
@@ -15,7 +15,7 @@ TEST(TestTwoSum, ShouldReturnNegativeIndexValue) {
   ASSERT_EQ(-1, j);
 }
 
-TEST(TestTwoSum, ShouldReturnExpectedIndexValues) {
+TEST(TestTwoSumOn2, ShouldReturnExpectedIndexValues) {
   // given
   std::vector<int> v{2, 5, 11, 15};
   int target{7};
@@ -28,7 +28,7 @@ TEST(TestTwoSum, ShouldReturnExpectedIndexValues) {
   ASSERT_EQ(1, j);
 }
 
-TEST(TestTwoSum, ShouldThrowExceptionWhenVectorEmpty) {
+TEST(TestTwoSumOn2, ShouldThrowExceptionWhenInputVectorIsEmpty) {
   // given
   std::vector<int> v;
   int target{7};
@@ -45,7 +45,7 @@ TEST(TestTwoSum, ShouldThrowExceptionWhenVectorEmpty) {
   }
 }
 
-TEST(TestTwoSum, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
+TEST(TestTwoSumOn2, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
   // given
   std::vector<int> v{-1, -24, -673, 9, 346, -7543, -2, 113};
   int target{7};
