@@ -27,9 +27,9 @@ private:
   std::string what_message_;
 };
 
-class SumTargetNotFoundException {
+class TargetNotFoundException {
 public:
-  explicit SumTargetNotFoundException(const std::string &what_message)
+  explicit TargetNotFoundException(const std::string &what_message)
       : what_message_{what_message} {}
 
   const char *what() const { return what_message_.c_str(); }
