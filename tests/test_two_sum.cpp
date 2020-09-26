@@ -2,17 +2,21 @@
 
 #include "1_two_sum/two_sum.hpp"
 
-TEST(TestTwoSumOn2, ShouldReturnNegativeIndexValueWhenTargetNotReached) {
+TEST(TestTwoSumOn2, ShouldThrowExceptionWhenTargetNotReached) {
   // given
   std::vector<int> v{2, 7, 11, 15};
   int target{7};
 
   // when
-  auto [i, j]{two_sum_on2(v, target)};
-
-  // then
-  ASSERT_EQ(-1, i);
-  ASSERT_EQ(-1, j);
+  try {
+    two_sum_on2(v, target);
+    FAIL();
+  } catch (const TargetNotFoundException &e) {
+    ASSERT_STREQ(
+        "const std::pair<int, int> two_sum_on2(...). Task condtion guarantee "
+        "exisiting of target, but no one was found.",
+        e.what());
+  }
 }
 
 TEST(TestTwoSumOn2, ShouldReturnExpectedIndexValues) {
