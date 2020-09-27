@@ -14,6 +14,7 @@ const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
       }
     }
   }
+  
   throw TargetNotFoundException{
       "const std::pair<int, int> two_sum_on2(...). Task condtion guarantee "
       "exisiting of target, but no one was found."};
