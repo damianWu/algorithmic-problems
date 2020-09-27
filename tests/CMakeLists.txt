@@ -2,7 +2,7 @@
 set(TWO_SUM ${PROJECT_NAME}_test)
 
 # Executable that runs the tests.
-add_executable(${TWO_SUM} test_two_sum.cpp)
+add_executable(${TWO_SUM} test_main.cpp test_two_sum.cpp)
 
 # Link the executable to needed libraries.
 target_link_libraries(
