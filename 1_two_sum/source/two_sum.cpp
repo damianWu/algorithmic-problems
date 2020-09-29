@@ -1,10 +1,11 @@
 #include "1_two_sum/two_sum.hpp"
 
-const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                      int target) {
-    if (numbers.size() == 0) {
+std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
+                                int target) {
+    if (numbers.empty()) {
         throw EmptyVectorException("const std::pair<int, int> "
-                                   "two_sum_on2(...). Input vector was empty.");
+                                   "two_sum_on2(...)."
+                                   " Input vector was empty.");
     }
 
     for (unsigned long long i = 0; i < numbers.size(); ++i) {
@@ -18,6 +19,7 @@ const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
     }
 
     throw TargetNotFoundException{
-        "const std::pair<int, int> two_sum_on2(...). Task condtion guarantee "
-        "exisiting of target, but no one was found."};
+            "const std::pair<int, int> two_sum_on2(...). "
+            "Task condtion guarantee exisiting of target,"
+            " but no one was found."};
 }
