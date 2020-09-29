@@ -9,10 +9,10 @@ TEST(TestTwoSumOn2, ShouldThrowExceptionWhenTargetNotReached) {
 
     // when
     try {
-        two_sum_on2(v, target);
+        two_sum_naive(v, target);
         FAIL();
     } catch (const TargetNotFoundException &e) {
-        ASSERT_STREQ("const std::pair<int, int> two_sum_on2(...). Task "
+        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Task "
                      "condtion guarantee "
                      "exisiting of target, but no one was found.",
                      e.what());
@@ -25,7 +25,7 @@ TEST(TestTwoSumOn2, ShouldReturnExpectedIndexValues) {
     int target{7};
 
     // when
-    auto [i, j]{two_sum_on2(v, target)};
+    auto [i, j]{two_sum_naive(v, target)};
 
     // then
     ASSERT_EQ(0, i);
@@ -39,11 +39,11 @@ TEST(TestTwoSumOn2, ShouldThrowExceptionWhenInputVectorIsEmpty) {
 
     try {
         // when
-        two_sum_on2(v, target);
+        two_sum_naive(v, target);
         FAIL();
     } catch (const EmptyVectorException &err) {
         // then
-        ASSERT_STREQ("const std::pair<int, int> two_sum_on2(...). Input vector "
+        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Input vector "
                      "was empty.",
                      err.what());
     }
@@ -55,7 +55,7 @@ TEST(TestTwoSumOn2, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
     int target{7};
 
     // when
-    auto [i, j]{two_sum_on2(v, target)};
+    auto [i, j]{two_sum_naive(v, target)};
 
     // then
     ASSERT_EQ(i, 3);
@@ -70,11 +70,11 @@ TEST(TestTwoSumOn2,
 
     try {
         // When
-        two_sum_on2(v, target);
+        two_sum_naive(v, target);
         FAIL();
     } catch (const TargetNotFoundException &e) {
         // Then
-        ASSERT_STREQ("const std::pair<int, int> two_sum_on2(...). Task "
+        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Task "
                      "condtion guarantee "
                      "exisiting of target, but no one was found.",
                      e.what());
