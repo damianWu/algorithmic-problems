@@ -27,7 +27,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")  # Release
 # ----------------------
 # Compiler flags
 # ----------------------
-set(GCC_COVERAGE_COMPILE_FLAGS "-std=c++20 -Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -Wold-style-cast -Wpointer-arith -Wcast-qual -Wno-unused-function")
+set(GCC_COVERAGE_COMPILE_FLAGS "-std=c++20 -Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -Wmissing-prototypes -Wold-style-cast -Wpointer-arith -Wcast-qual -Wno-unused-function")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
 
 
