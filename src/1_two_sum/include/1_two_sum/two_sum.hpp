@@ -57,10 +57,11 @@ std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
 std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
                                     int target);
 
-void buildListOfPairsNumberIndex(const std::vector<int> &numbers,
-                                 std::vector<std::pair<int, int>> &numbers_indexes);
+std::vector<std::pair<int, int>>
+buildListOfPairsNumberIndex(const std::vector<int> &numbers);
 
-std::pair<int,int> findIndices(const std::vector<std::pair<int, int>> &numbers_indexes,
-                               int target);
+std::pair<int, int>
+findIndices(const std::vector<std::pair<int, int>> &number_index,
+            int target);
 
 #endif // TWO_SUM
