@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <map>
 
 /**
  * Problem TYPE: TWO POINTER PROBLEM
@@ -48,7 +49,18 @@ public:
 
 // Naive implementation;
 // Time complexity: O(n^2)
-std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                int target);
+std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
+                                  int target);
+
+// Effective implementation;
+// Time complexity: O(n*log(n))
+std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
+                                    int target);
+
+void buildListOfPairsNumberIndex(const std::vector<int> &numbers,
+                                 std::vector<std::pair<int, int>> &numbers_indexes);
+
+std::pair<int,int> findIndices(const std::vector<std::pair<int, int>> &numbers_indexes,
+                               int target);
 
 #endif // TWO_SUM
