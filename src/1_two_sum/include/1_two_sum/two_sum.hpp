@@ -1,6 +1,10 @@
 #ifndef TWO_SUM
 #define TWO_SUM
 
+#include <stdexcept>
+#include <string>
+#include <vector>
+
 /**
  * Problem TYPE: TWO POINTER PROBLEM
  */
@@ -16,9 +20,6 @@
 // Output: [0,1]
 // Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-#include <stdexcept>
-#include <string>
-#include <vector>
 
 // All exception classes should derive by template class which is
 // out of my skills.
