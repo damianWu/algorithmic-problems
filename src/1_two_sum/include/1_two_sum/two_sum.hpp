@@ -1,7 +1,9 @@
 #ifndef TWO_SUM
 #define TWO_SUM
 
-// Problem description:
+/**
+ * Problem TYPE: TWO POINTER PROBLEM
+ */
 
 // Given an array of integers, return INDICES of the two numbers
 // such that they add up to a specific target.
