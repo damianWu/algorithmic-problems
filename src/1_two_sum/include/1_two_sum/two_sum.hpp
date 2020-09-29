@@ -7,7 +7,7 @@
 #include <map>
 
 /**
- * Problem TYPE: TWO POINTER PROBLEM
+ * Problem TYPE: TWO POINTERS PROBLEM
  */
 
 // Given an array of integers, return INDICES of the two numbers
