@@ -14,30 +14,33 @@
 // Output: [0,1]
 // Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+#include <stdexcept>
 #include <string>
 #include <vector>
 
+// All exception classes should derive by template class which is
+// out of my skills.
 // Exception classes
-class EmptyVectorException {
-  public:
+class EmptyVectorException : std::runtime_error {
+public:
     explicit EmptyVectorException(const std::string &what_message)
-        : what_message_{what_message} {}
+            : std::runtime_error{what_message} {}
 
-    const char *what() const { return what_message_.c_str(); }
-
-  private:
-    std::string what_message_;
+    [[nodiscard]] const char *
+    what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW override {
+        return std::runtime_error::what();
+    }
 };
 
-class TargetNotFoundException {
-  public:
+class TargetNotFoundException : std::runtime_error {
+public:
     explicit TargetNotFoundException(const std::string &what_message)
-        : what_message_{what_message} {}
+            : std::runtime_error{what_message} {}
 
-    const char *what() const { return what_message_.c_str(); }
-
-  private:
-    const std::string what_message_;
+    [[nodiscard]] const char *
+    what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW override {
+        return std::runtime_error::what();
+    }
 };
 
 // Naive implementation;
