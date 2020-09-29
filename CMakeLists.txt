@@ -43,7 +43,7 @@ enable_testing()
 # ----------------------
 # Outsource test to another folder.
 add_subdirectory(tests)
-add_subdirectory(1_two_sum)
+add_subdirectory(src/1_two_sum)
 
 
 # ----------------------
@@ -53,7 +53,6 @@ add_executable(
     ${project_name} 
     main.cpp
 )
-
 
 # ----------------------
 # Search header file in <dir>
