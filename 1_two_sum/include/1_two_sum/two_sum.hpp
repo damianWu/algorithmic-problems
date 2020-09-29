@@ -45,7 +45,7 @@ public:
 
 // Naive implementation;
 // Time complexity: O(n^2)
-const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                      int target);
+std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
+                                int target);
 
 #endif // TWO_SUM
