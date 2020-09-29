@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "1_two_sum/two_sum.hpp"
-
+s
 TEST(TestTwoSumOn2, ShouldThrowExceptionWhenTargetNotReached) {
     // given
     std::vector<int> v{2, 7, 11, 15};
@@ -12,9 +12,9 @@ TEST(TestTwoSumOn2, ShouldThrowExceptionWhenTargetNotReached) {
         two_sum_naive(v, target);
         FAIL();
     } catch (const TargetNotFoundException &e) {
-        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Task "
-                     "condtion guarantee "
-                     "exisiting of target, but no one was found.",
+        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). "
+                     "Task conditions guarantee existing of target,"
+                     " but no one was found.",
                      e.what());
     }
 }
@@ -25,7 +25,7 @@ TEST(TestTwoSumOn2, ShouldReturnExpectedIndexValues) {
     int target{7};
 
     // when
-    auto [i, j]{two_sum_naive(v, target)};
+    auto[i, j]{two_sum_naive(v, target)};
 
     // then
     ASSERT_EQ(0, i);
@@ -43,9 +43,10 @@ TEST(TestTwoSumOn2, ShouldThrowExceptionWhenInputVectorIsEmpty) {
         FAIL();
     } catch (const EmptyVectorException &err) {
         // then
-        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Input vector "
-                     "was empty.",
-                     err.what());
+        ASSERT_STREQ(
+                "const std::pair<int, int> two_sum_naive(...). Input vector "
+                "was empty.",
+                err.what());
     }
 }
 
@@ -55,7 +56,7 @@ TEST(TestTwoSumOn2, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
     int target{7};
 
     // when
-    auto [i, j]{two_sum_naive(v, target)};
+    auto[i, j]{two_sum_naive(v, target)};
 
     // then
     ASSERT_EQ(i, 3);
@@ -74,9 +75,9 @@ TEST(TestTwoSumOn2,
         FAIL();
     } catch (const TargetNotFoundException &e) {
         // Then
-        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). Task "
-                     "condtion guarantee "
-                     "exisiting of target, but no one was found.",
+        ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). "
+                     "Task conditions guarantee existing of target,"
+                     " but no one was found.",
                      e.what());
     }
 }
