@@ -1,6 +1,8 @@
 #ifndef TWO_SUM
 #define TWO_SUM
 
+// Problem description:
+
 // Given an array of integers, return INDICES of the two numbers
 // such that they add up to a specific target.
 // You may assume that each input would have EXACTLY one solution,
