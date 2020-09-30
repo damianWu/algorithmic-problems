@@ -24,12 +24,17 @@ namespace TwoSum {
                 " but no one was found."};
     }
 
-std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
-                                    int target) {
-    auto number_index{buildListOfPairsNumberIndex(numbers)};
-    std::sort(number_index.begin(), number_index.end());
-    return findIndices(number_index, target);
-}
+    std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
+                                        int target) {
+        if (numbers.empty()) {
+            throw EmptyVectorException{
+                    "std::pair<int, int> two_sum_optimal(...)"
+                    " Input vector was empty."};
+        }
+        auto number_index{buildListOfPairsNumberIndex(numbers)};
+        std::sort(number_index.begin(), number_index.end());
+        return findIndices(number_index, target);
+    }
 
 std::pair<int, int> findIndices(
         const std::vector<std::pair<int, int>> &number_index,
