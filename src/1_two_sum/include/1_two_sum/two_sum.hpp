@@ -7,14 +7,17 @@
 #include <map>
 
 /**
- * Problem TYPE: TWO POINTERS PROBLEM
+ * Problem type: TWO POINTERS PROBLEM
  */
 
 // Given an array of integers, return INDICES of the two numbers
 // such that they add up to a specific target.
 // You may assume that each input would have EXACTLY one solution,
 // and you may not use the SAME element twice.
-// If negative index value is returned, means that solution was not found.
+// You can return the answer in any order.
+
+
+
 
 // Example 1:
 // Input: nums = [2,7,11,15], target = 9
