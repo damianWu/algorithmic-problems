@@ -27,11 +27,12 @@ TEST_F(TwoSumNaiveTest, ShouldThrowExceptionWhenTargetNotReached) {
     // Given
     std::vector<int> v{2, 7, 11, 15};
 
-    // when
     try {
+        // When
         two_sum_naive(v, target);
         FAIL();
     } catch (const TargetNotFoundException &e) {
+        // Then
         ASSERT_STREQ("const std::pair<int, int> two_sum_naive(...). "
                      "Task conditions guarantee existing of target,"
                      " but no one was found.",
@@ -39,30 +40,30 @@ TEST_F(TwoSumNaiveTest, ShouldThrowExceptionWhenTargetNotReached) {
     }
 }
 
-TEST(TestTwoSumOn2, ShouldReturnExpectedIndexValues) {
-    // given
+TEST_F(TwoSumNaiveTest, ShouldReturnExpectedIndexValues) {
+    // Given
     std::vector<int> v{2, 5, 11, 15};
-    int target{7};
+    const unsigned long long i_index_expected{0};
+    const unsigned long long j_index_expected{1};
 
-    // when
+    // When
     auto[i, j]{two_sum_naive(v, target)};
 
-    // then
-    ASSERT_EQ(0, i);
-    ASSERT_EQ(1, j);
+    // Then
+    ASSERT_EQ(i_index_expected, i);
+    ASSERT_EQ(j_index_expected, j);
 }
 
-TEST(TestTwoSumOn2, ShouldThrowExceptionWhenInputVectorIsEmpty) {
-    // given
+TEST_F(TwoSumNaiveTest, ShouldThrowExceptionWhenInputVectorIsEmpty) {
+    // Given
     std::vector<int> v;
-    int target{7};
 
     try {
-        // when
+        // When
         two_sum_naive(v, target);
         FAIL();
     } catch (const EmptyVectorException &err) {
-        // then
+        // Then
         ASSERT_STREQ(
                 "const std::pair<int, int> two_sum_naive(...). Input vector "
                 "was empty.",
@@ -70,24 +71,25 @@ TEST(TestTwoSumOn2, ShouldThrowExceptionWhenInputVectorIsEmpty) {
     }
 }
 
-TEST(TestTwoSumOn2, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
-    // given
+TEST_F(TwoSumNaiveTest, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
+    // Given
     std::vector<int> v{-1, -24, -673, 9, 346, -7543, -2, 113};
-    int target{7};
+    const unsigned long long i_index_expected{3};
+    const unsigned long long j_index_expected{6};
 
-    // when
+    // When
     auto[i, j]{two_sum_naive(v, target)};
 
-    // then
-    ASSERT_EQ(i, 3);
-    ASSERT_EQ(j, 6);
+    // Then
+    ASSERT_EQ(i_index_expected, i);
+    ASSERT_EQ(j_index_expected, j);
 }
 
-TEST(TestTwoSumOn2,
-     ShouldThrowExceptionWhenTargetExistButDoNotSatisfyProblemBoundaries) {
+TEST_F(TwoSumNaiveTest,
+       ShouldThrowExceptionWhenTargetExistButDoNotSatisfyProblemBoundaries) {
     // Given
     std::vector<int> v{2, 3, 11, 15};
-    int target{6};
+    target = 6;
 
     try {
         // When
