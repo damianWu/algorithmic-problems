@@ -1,12 +1,15 @@
 # Set TARGET(binary file) name for convenience
-set(TWO_SUM ${PROJECT_NAME}_test)
+set(ADS_TEST ${PROJECT_NAME}_test)
+
+# Test files names
+set(TWO_SUM test_two_sum.cpp)
 
 # Executable that runs the tests.
-add_executable(${TWO_SUM} test_main.cpp test_two_sum.cpp)
+add_executable(${ADS_TEST} test_main.cpp ${TWO_SUM})
 
 # Link the executable to needed libraries.
 target_link_libraries(
-    ${TWO_SUM}
+    ${ADS_TEST}
     two_sum             # Library we are testing
     gtest gtest_main    # GTest libraries
 )
@@ -15,6 +18,6 @@ target_link_libraries(
 add_test(
     # NAME ${TEST_BLAH}
     # COMMAND ${EXECUTABLE_OUTPUT_PATH}/${TEST_BLAH}
-    ${TWO_SUM}
-    ${TWO_SUM}
+    ${ADS_TEST}
+    ${ADS_TEST}
 )
