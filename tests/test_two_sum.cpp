@@ -1,11 +1,31 @@
 #include <gtest/gtest.h>
 
 #include "1_two_sum/two_sum.hpp"
-s
-TEST(TestTwoSumOn2, ShouldThrowExceptionWhenTargetNotReached) {
-    // given
-    std::vector<int> v{2, 7, 11, 15};
+
+using TwoSum::two_sum_naive, TwoSum::two_sum_optimal;
+using TwoSum::TargetNotFoundException, TwoSum::EmptyVectorException;
+
+
+class TwoSumNaiveTest : public ::testing::Test {
+protected:
+//    void SetUp() override {
+//        target = 7;
+//    }
+
     int target{7};
+};
+
+class TwoSumOptimalTest : public ::testing::Test {
+protected:
+    int target{7};
+};
+
+/**
+ * Optimal
+ */
+TEST_F(TwoSumNaiveTest, ShouldThrowExceptionWhenTargetNotReached) {
+    // Given
+    std::vector<int> v{2, 7, 11, 15};
 
     // when
     try {
