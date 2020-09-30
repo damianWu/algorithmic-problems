@@ -36,41 +36,42 @@ namespace TwoSum {
         return findIndices(number_index, target);
     }
 
-std::pair<int, int> findIndices(
-        const std::vector<std::pair<int, int>> &number_index,
-        int target) {
-    unsigned long long first_index{0};
-    unsigned long long second_index{number_index.size() - 1};
+    std::pair<int, int> findIndices(
+            const std::vector<std::pair<int, int>> &number_index,
+            int target) {
+        unsigned long long first_index{0};
+        unsigned long long second_index{number_index.size() - 1};
 
-    while (first_index < second_index) {
-        auto sum{number_index.at(first_index).first +
-                 number_index.at(second_index).first};
-        if (sum == target) {
-            return {
-                    number_index.at(first_index).second,
-                    number_index.at(second_index).second
-            };
-        } else if (sum > target) {
-            --second_index;
-        } else {
-            --first_index;
+        while (first_index < second_index) {
+            auto sum{number_index.at(first_index).first +
+                     number_index.at(second_index).first};
+            if (sum == target) {
+                return {
+                        number_index.at(first_index).second,
+                        number_index.at(second_index).second
+                };
+            } else if (sum > target) {
+                --second_index;
+            } else {
+                ++first_index;
+            }
         }
+
+        throw TargetNotFoundException{
+                "std::pair<int, int> findIndices(...) "
+                "Task conditions guarantee existing of target,"
+                " but no one was found."};
     }
 
-    throw TargetNotFoundException{
-            "std::pair<int, int> findIndices(...) "
-            "Task conditions guarantee existing of target,"
-            " but no one was found."};
-}
-
-std::vector<std::pair<int, int>>
-buildListOfPairsNumberIndex(const std::vector<int> &numbers) {
-    // number, index
-    std::vector<std::pair<int, int>> number_index;
-    // Reserve space in vector
-    number_index.reserve(numbers.size());
-    for (unsigned long long i = 0; i < numbers.size(); ++i) {
-        number_index.emplace_back(numbers.at(i), i);
+    std::vector<std::pair<int, int>>
+    buildListOfPairsNumberIndex(const std::vector<int> &numbers) {
+        // number, index
+        std::vector<std::pair<int, int>> number_index;
+        // Reserve space in vector
+        number_index.reserve(numbers.size());
+        for (unsigned long long i = 0; i < numbers.size(); ++i) {
+            number_index.emplace_back(numbers.at(i), i);
+        }
+        return number_index;
     }
-    return number_index;
 }
