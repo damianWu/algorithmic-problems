@@ -15,7 +15,7 @@ set(
 
 # Executable that runs the tests.
 add_executable(
-        ${ADS_TEST}
+        ${ADS_TEST}             # Executable test file name
         test_main.cpp
         ${TEST_FILES}
 )
@@ -23,8 +23,8 @@ add_executable(
 # Link the executable to needed libraries.
 target_link_libraries(
         ${ADS_TEST}
-        ${TESTED_LIBRARIES} # Library we are testing
-        gtest gtest_main    # GTest libraries
+        ${TESTED_LIBRARIES}     # Library we are testing
+        gtest gtest_main        # GTest libraries
 )
 
 # Add gtest to be able to run ctest.
