@@ -1,5 +1,6 @@
 #include "1_two_sum/two_sum.hpp"
 
+namespace TwoSum {
 
 std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
                                   int target) {
