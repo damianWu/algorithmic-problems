@@ -21,7 +21,7 @@ protected:
 };
 
 /**
- * Optimal
+ * Naive
  */
 TEST_F(TwoSumNaiveTest, ShouldThrowExceptionWhenTargetNotReached) {
     // Given
