@@ -2,27 +2,27 @@
 
 namespace TwoSum {
 
-std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
-                                  int target) {
-    if (numbers.empty()) {
-        throw EmptyVectorException("const std::pair<int, int> "
-                                   "two_sum_naive(...)."
-                                   " Input vector was empty.");
-    }
-    for (unsigned long long i = 0; i < numbers.size(); ++i) {
-        for (unsigned long long j = 0; j < numbers.size(); ++j) {
-            if (i != j) {
-                if (numbers.at(i) + numbers.at(j) == target) {
-                    return std::make_pair(i, j);
+    std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
+                                      int target) {
+        if (numbers.empty()) {
+            throw EmptyVectorException(
+                    "const std::pair<int, int> two_sum_naive(...)."
+                    " Input vector was empty.");
+        }
+        for (unsigned long long i = 0; i < numbers.size(); ++i) {
+            for (unsigned long long j = 0; j < numbers.size(); ++j) {
+                if (i != j) {
+                    if (numbers.at(i) + numbers.at(j) == target) {
+                        return std::make_pair(i, j);
+                    }
                 }
             }
         }
+        throw TargetNotFoundException{
+                "const std::pair<int, int> two_sum_naive(...). "
+                "Task conditions guarantee existing of target,"
+                " but no one was found."};
     }
-    throw TargetNotFoundException{
-            "const std::pair<int, int> two_sum_naive(...). "
-            "Task conditions guarantee existing of target,"
-            " but no one was found."};
-}
 
 std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
                                     int target) {
