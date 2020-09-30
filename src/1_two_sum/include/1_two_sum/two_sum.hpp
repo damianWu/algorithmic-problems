@@ -53,19 +53,20 @@ namespace TwoSum {
 
 // Naive implementation;
 // Time complexity: O(n^2)
-std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
-                                  int target);
+    std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
+                                      int target);
 
 // Effective implementation;
 // Time complexity: O(n*log(n))
-std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
-                                    int target);
+    std::pair<int, int>
+    two_sum_optimal(const std::vector<int> &numbers, int target);
 
-std::vector<std::pair<int, int>>
-buildListOfPairsNumberIndex(const std::vector<int> &numbers);
+    std::vector<std::pair<int, int>>
+    buildListOfPairsNumberIndex(const std::vector<int> &numbers);
 
-std::pair<int, int>
-findIndices(const std::vector<std::pair<int, int>> &number_index,
-            int target);
+    std::pair<int, int>
+    findIndices(const std::vector<std::pair<int, int>> &number_index,
+                int target);
 
+}
 #endif // TWO_SUM
