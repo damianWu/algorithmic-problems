@@ -33,6 +33,6 @@ target_link_libraries(
 
 # Add gtest to be able to run ctest.
 add_test(
-        NAME MyADSTest          # Test name
+        NAME ADSTest            # Test name
         COMMAND ${ADS_TEST}     # Executable test file name
 )
