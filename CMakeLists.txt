@@ -43,6 +43,7 @@ enable_testing()
 # ----------------------
 # Outsource test to another folder.
 add_subdirectory(tests)
+add_subdirectory(src/utils/exception)
 add_subdirectory(src/2_max_consecutive_ones)
 
 
@@ -59,11 +60,11 @@ add_executable(
 # ----------------------
 # include_directories(${CMAKE_SOURCE_DIR}/<dir>)
 
-
 # ----------------------
 # Link libraries with executable target
 # ----------------------
 target_link_libraries(
         ${project_name}
+        ads_exception
         max_consecutive_ones
 )
