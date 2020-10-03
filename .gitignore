@@ -1,6 +1,11 @@
+# VSCode
+.vscode
+
 # Clang
 .clang-format
 
+# CLion
+.idea
 
 ##### Windows
 # Windows thumbnail cache files
