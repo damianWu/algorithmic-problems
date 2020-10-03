@@ -11,8 +11,8 @@ target_include_directories(
         include
 )
 
-# TODO - Is this proper way of add two_sum lib to scope?
-target_link_libraries(
-        max_consecutive_ones
-        two_sum
+# TODO - Is this proper way of add lib to scope?
+target_link_libraries   (
+        max_consecutive_ones    # Target
+        ads_exception
 )
