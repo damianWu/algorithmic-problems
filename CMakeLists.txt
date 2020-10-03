@@ -8,45 +8,62 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif ()
 
-# Required for DEBUGGING
+
+# ----------------------
+# Debugging
+# ----------------------
 #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG")
 #set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 
+
+# ----------------------
+# CXX settings
+# ----------------------
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")  # Release
 
+
+# ----------------------
 # Compiler flags
-set(GCC_COVERAGE_COMPILE_FLAGS "-std=c++20 -Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -Wold-style-cast -Wpointer-arith -Wcast-qual -Wno-unused-function")
+# ----------------------
+set(GCC_COVERAGE_COMPILE_FLAGS "-std=c++20 -Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -Wmissing-prototypes -Wold-style-cast -Wpointer-arith -Wcast-qual -Wno-unused-function")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
 
-# Linker settings
-#set(GCC_COVERAGE_LINK_FLAGS "-lgcov")
-#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
+
+# ----------------------
+# Tests
+# ----------------------
+# Must be defined in top-most CMakeLists.txt file.
+enable_testing()
 
 
-# add_subdirectory(hello_lib)
-# add_subdirectory(gblah_lib)
-
-# Testing
-# enable_testing() # Must be defined in top-most CMakeLists.txt file.
+# ----------------------
+# Libraries / Subdirectories
+# ----------------------
 # Outsource test to another folder.
-# add_subdirectory(tests)
+add_subdirectory(tests)
+add_subdirectory(src/unique_list)
 
 
+# ----------------------
+# Create executable target
+# ----------------------
 add_executable(
-    ${project_name} 
-    main.cpp
+        ${project_name}
+        main.cpp
 )
 
-
+# ----------------------
 # Search header file in <dir>
+# ----------------------
 # include_directories(${CMAKE_SOURCE_DIR}/<dir>)
 
-# target_link_libraries(${project_name} 
-#     hello
-#     blah
-# )
 
-
-
+# ----------------------
+# Link libraries with executable target
+# ----------------------
+target_link_libraries(
+        ${project_name}
+        unique_list
+)
