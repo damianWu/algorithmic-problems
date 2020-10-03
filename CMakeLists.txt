@@ -63,8 +63,8 @@ add_executable(
 # ----------------------
 # Link libraries with executable target
 # ----------------------
-target_link_libraries(
-        ${project_name}
-        ads_exception
-        max_consecutive_ones
-)
+#target_link_libraries(
+#        ${project_name}
+#        ads_exception
+#        max_consecutive_ones
+#)
