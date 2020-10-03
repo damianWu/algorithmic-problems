@@ -4,16 +4,12 @@ set(ADS_TEST ${PROJECT_NAME}_test)
 # Test files
 set(
         TEST_FILES
-#        test_1_two_sum.cpp
-#        test_unique_list.cpp
         test_2_max_consecutive_ones.cpp
 )
 
 # (Names of) Tested libraries
 set(
         TESTED_LIBRARIES
-        two_sum
-        unique_list
         max_consecutive_ones
 )
 

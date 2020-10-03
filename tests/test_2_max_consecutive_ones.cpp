@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <1_two_sum/two_sum.hpp>
+#include <utils/ads_exception.hpp>
 #include <2_max_consecutive_ones/max_consecutive_ones.hpp>
 
 // Tuple used only for educational purposes
@@ -51,7 +51,7 @@ TEST(MaxConsecutiveOnesNaiveTest, ShouldReturnExceptionWhenInputVectorIsEmpty) {
         max_consecutive_ones(input);
         FAIL() << "Expected exception from unsigned int max_consecutive_ones(...)"
                   " when input vector is empty.";
-    } catch (const TwoSum::EmptyVectorException &e) {
+    } catch (const ADSException::EmptyVectorException &e) {
         // Then
         ASSERT_STREQ("unsigned int max_consecutive_ones(...)."
                      " Input vector was empty.", e.what());
