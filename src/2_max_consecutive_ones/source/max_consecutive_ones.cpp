@@ -1,5 +1,5 @@
 #include "2_max_consecutive_ones/max_consecutive_ones.hpp"
-#include "1_two_sum/two_sum.hpp"
+#include "utils/ads_exception.hpp"
 
 unsigned int max_consecutive_ones(const std::vector<unsigned int> &bits) {
     check_and_throw_if_bit_is_empty(bits);
@@ -20,7 +20,7 @@ unsigned int max_consecutive_ones(const std::vector<unsigned int> &bits) {
 
 void check_and_throw_if_bit_is_empty(const std::vector<unsigned int> &bits) {
     if (bits.empty()) {
-        throw TwoSum::EmptyVectorException{
+        throw ADSException::EmptyVectorException{
                 "unsigned int max_consecutive_ones(...)."
                 " Input vector was empty."};
     }
