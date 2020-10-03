@@ -44,6 +44,7 @@ enable_testing()
 # Outsource test to another folder.
 add_subdirectory(tests)
 add_subdirectory(src/unique_list)
+add_subdirectory(src/utils/exception)
 
 
 # ----------------------
@@ -66,4 +67,5 @@ add_executable(
 target_link_libraries(
         ${project_name}
         unique_list
+        ads_exception
 )
