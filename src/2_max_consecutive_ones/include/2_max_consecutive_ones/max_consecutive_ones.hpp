@@ -3,7 +3,7 @@
 
 #include <vector>
 
-unsigned int max_consecutive_ones(const std::vector<unsigned int> &bits);
+unsigned int max_consecutive_ones(const std::vector<unsigned int> &nums);
 
 void check_and_throw_if_bit_is_empty(const std::vector<unsigned int> &bits);
 
