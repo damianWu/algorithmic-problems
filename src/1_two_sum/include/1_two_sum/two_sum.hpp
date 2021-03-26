@@ -1,10 +1,12 @@
-#ifndef TWO_SUM
-#define TWO_SUM
+// Copyright [2021] <DamWu>
+#ifndef SRC_1_TWO_SUM_INCLUDE_1_TWO_SUM_TWO_SUM_HPP_
+#define SRC_1_TWO_SUM_INCLUDE_1_TWO_SUM_TWO_SUM_HPP_
 
+#include <map>
 #include <stdexcept>
 #include <string>
+#include <utility>
 #include <vector>
-#include <map>
 
 /**
  * Problem type: TWO POINTERS PROBLEM
@@ -26,44 +28,43 @@ namespace TwoSum {
 // All exception classes should derive by template class which is
 // out of my skills right now.
 // Exception classes
-    class EmptyVectorException : std::runtime_error {
-    public:
-        explicit EmptyVectorException(const std::string &what_message)
-                : std::runtime_error{what_message} {}
+class EmptyVectorException : std::runtime_error {
+ public:
+    explicit EmptyVectorException(const std::string &what_message)
+        : std::runtime_error{what_message} {}
 
-        [[nodiscard]] const char *
-        what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW override {
-            return std::runtime_error::what();
-        }
-    };
+    [[nodiscard]] const char *what() const _GLIBCXX_TXN_SAFE_DYN
+        _GLIBCXX_NOTHROW override {
+        return std::runtime_error::what();
+    }
+};
 
-    class TargetNotFoundException : std::runtime_error {
-    public:
-        explicit TargetNotFoundException(const std::string &what_message)
-                : std::runtime_error{what_message} {}
+class TargetNotFoundException : std::runtime_error {
+ public:
+    explicit TargetNotFoundException(const std::string &what_message)
+        : std::runtime_error{what_message} {}
 
-        [[nodiscard]] const char *
-        what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW override {
-            return std::runtime_error::what();
-        }
-    };
+    [[nodiscard]] const char *what() const _GLIBCXX_TXN_SAFE_DYN
+        _GLIBCXX_NOTHROW override {
+        return std::runtime_error::what();
+    }
+};
 
 // Naive implementation;
 // Time complexity: O(n^2)
-    std::pair<int, int> two_sum_naive(const std::vector<int> &numbers,
-                                      int target);
+std::pair<int, int> two_sum_naive(const std::vector<int> &numbers, int target);
 
 // Effective implementation;
 // Time complexity: O(n*log(n))
-    std::pair<int, int>
-    two_sum_optimal(const std::vector<int> &numbers, int target);
+std::pair<int, int> two_sum_optimal(const std::vector<int> &numbers,
+                                    int target);
 
-    std::vector<std::pair<int, int>>
-    buildListOfPairsNumberIndex(const std::vector<int> &numbers);
+std::vector<std::pair<int, int>> buildListOfPairsNumberIndex(
+    const std::vector<int> &numbers);
 
-    std::pair<int, int>
-    findIndices(const std::vector<std::pair<int, int>> &number_index,
-                int target);
+std::pair<int, int> findIndices(
+    const std::vector<std::pair<int, int>> &number_index, int target);
 
-}
-#endif // TWO_SUM
+}  // namespace TwoSum
+
+#endif  // SRC_1_TWO_SUM_INCLUDE_1_TWO_SUM_TWO_SUM_HPP_
