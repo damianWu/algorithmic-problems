@@ -13,28 +13,29 @@
 // Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 #include <string>
+#include <utility>
 #include <vector>
 
 // Exception classes
 class EmptyVectorException {
-  public:
+ public:
     explicit EmptyVectorException(const std::string &what_message)
         : what_message_{what_message} {}
 
     const char *what() const { return what_message_.c_str(); }
 
-  private:
+ private:
     std::string what_message_;
 };
 
 class TargetNotFoundException {
-  public:
-    explicit TargetNotFoundException(const std::string &what_message)
-        : what_message_{what_message} {}
+ public:
+    explicit TargetNotFoundException(std::string &&what_message)
+        : what_message_{std::move(what_message)} {}
 
     const char *what() const { return what_message_.c_str(); }
 
-  private:
+ private:
     const std::string what_message_;
 };
 
@@ -43,4 +44,4 @@ class TargetNotFoundException {
 const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
                                       int target);
 
-#endif // TWO_SUM
+#endif  // TWO_SUM

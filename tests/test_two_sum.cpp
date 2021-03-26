@@ -61,3 +61,22 @@ TEST(TestTwoSumOn2, ShouldReturnCorrectIndexWhenNegativeNumbersInVector) {
     ASSERT_EQ(i, 3);
     ASSERT_EQ(j, 6);
 }
+
+TEST(TestTwoSumOn2,
+     ShouldThrowExceptionWhenTargetExistButDoNotSatisfyProblemBoundaries) {
+    // Given
+    std::vector<int> v{2, 3, 11, 15};
+    int target{6};
+
+    try {
+        // When
+        two_sum_on2(v, target);
+        FAIL();
+    } catch (const TargetNotFoundException &e) {
+        // Then
+        ASSERT_STREQ("const std::pair<int, int> two_sum_on2(...). Task "
+                     "condtion guarantee "
+                     "exisiting of target, but no one was found.",
+                     e.what());
+    }
+}

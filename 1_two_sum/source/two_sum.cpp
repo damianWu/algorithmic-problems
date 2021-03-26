@@ -1,7 +1,6 @@
 #include "1_two_sum/two_sum.hpp"
 
-const std::pair<int, int> two_sum_on2(const std::vector<int> &numbers,
-                                      int target) {
+std::pair<int, int> two_sum_on2(const std::vector<int> &numbers, int target) {
     if (numbers.size() == 0) {
         throw EmptyVectorException("const std::pair<int, int> "
                                    "two_sum_on2(...). Input vector was empty.");
