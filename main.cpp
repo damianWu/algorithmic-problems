@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-  std::cout << "Bare project"
-            << "\n";
-  return 0;
+    std::cout << "Bare project"
+              << "\n";
+    return 0;
 }

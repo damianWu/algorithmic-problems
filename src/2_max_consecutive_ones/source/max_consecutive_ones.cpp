@@ -1,8 +1,9 @@
 #include "2_max_consecutive_ones/max_consecutive_ones.hpp"
+
 #include "utils/ads_exception.hpp"
 
 unsigned int max_consecutive_ones(const std::vector<unsigned int> &nums) {
-    check_and_throw_if_bit_is_empty(nums);
+    throw_if_vector_is_empty(nums);
     unsigned int max_consecutive{0};
     unsigned int actual_consecutive{0};
     for (const auto &bit : nums) {
@@ -21,10 +22,10 @@ unsigned int max_consecutive_ones(const std::vector<unsigned int> &nums) {
     return max_consecutive;
 }
 
-void check_and_throw_if_bit_is_empty(const std::vector<unsigned int> &bits) {
+void throw_if_vector_is_empty(const std::vector<unsigned int> &bits) {
     if (bits.empty()) {
         throw ADSException::EmptyVectorException{
-                "unsigned int max_consecutive_ones(...)."
-                " Input vector was empty."};
+            "unsigned int max_consecutive_ones(...)."
+            " Input vector was empty."};
     }
 }
