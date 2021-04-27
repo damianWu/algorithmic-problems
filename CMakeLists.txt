@@ -50,7 +50,7 @@ endif()
 # Tests
 # ----------------------
 # Must be defined in top-most CMakeLists.txt file.
-#enable_testing()
+enable_testing()
 
 
 # ----------------------
@@ -58,7 +58,7 @@ endif()
 # ----------------------
 # Outsource tests to another folder.
 add_subdirectory(source/quicksort)
-# add_subdirectory(tests)
+add_subdirectory(tests)
 
 
 # ----------------------

@@ -1,6 +1,7 @@
 # Clang
 .clang-format
 
+.vscode/
 
 ##### Windows
 # Windows thumbnail cache files

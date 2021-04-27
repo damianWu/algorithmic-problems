@@ -1,28 +1,74 @@
 #include <gtest/gtest.h>
-#include "temp_read_2/temp_read.h"
-#include "homework/homework.h"
-//#include "utils/exception.hpp"
+
+#include "quicksort/quicksort.hpp"
 
 // Tuple used only for educational purposes
-class MaxConsecutiveOnesNaiveParameterizedTestFixture
-        : public ::testing::TestWithParam<std::tuple<unsigned int>> {
-};
+// class MaxConsecutiveOnesNaiveParameterizedTestFixture
+//     : public ::testing::TestWithParam<std::tuple<unsigned int>> {};
 
-
-TEST(TemperatureReadingTest, ShouldReturnCorrectStringMonth) {
-    // Month range [0-11]
+TEST(QuicksortTest, ShouldReturnCorrectAscendingOrder1) {
     // Given
-    int month{11};
-    std::string expected{"dec"};
+    std::vector<int> expected{1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     // When
-    std::string result{int_to_month(month)};
+    std::vector<int> actual{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    quicksort(std::begin(actual), std::end(actual));
 
     // Then
-    ASSERT_EQ(expected, result);
+    ASSERT_EQ(expected, actual);
 }
 
+TEST(QuicksortTest, ShouldReturnCorrectAscendingOrder2) {
+    // Given
+    std::vector<int> expected{1, 2, 3, 7, 8};
 
+    // When
+    std::vector<int> actual{3, 7, 8, 2, 1};
+    quicksort(std::begin(actual), std::end(actual));
+
+    // Then
+    ASSERT_EQ(expected, actual);
+}
+
+TEST(QuicksortTest, ShouldReturnCorrectAscendingOrder3) {
+    // Given
+    std::vector<int> expected{1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    // When
+    std::vector<int> actual{1, 5, 3, 8, 6, 2, 9, 7, 4};
+    quicksort(std::begin(actual), std::end(actual));
+
+    // Then
+    ASSERT_EQ(expected, actual);
+}
+
+TEST(QuicksortTest, ShouldReturnCorrectAscendingOrder4) {
+    // Given
+    std::vector<int> expected{-235, -23, 1, 2, 6, 7, 23, 89, 235};
+
+    // When
+    std::vector<int> actual{-23, 235, -235, 6, 7, 89, 2, 1, 23};
+    quicksort(std::begin(actual), std::end(actual));
+
+    // Then
+    ASSERT_EQ(expected, actual);
+}
+
+TEST(QuicksortTest, ShouldReturnCorrectAscendingOrder5) {
+    // Given
+    std::vector<int> expected{0};
+
+    // When
+    std::vector<int> actual{0};
+    quicksort(std::begin(actual), std::end(actual));
+
+    // Then
+    ASSERT_EQ(expected, actual);
+}
+
+/*
+//
+        // std::vector<int> input_data{1, 5, 3, 8, 6, 2, 9, 7, 4};
 TEST(TemperatureReadingHomeworkTestEx2, ShouldReturnCorrectMeanValue) {
     // Given
     std::vector<Reading> r{Reading{0, 0, 10},
@@ -94,3 +140,4 @@ TEST(TemperatureReadingHomeworkTestEx3,
     // Then
     ASSERT_EQ(actual, result);
 }
+*/
